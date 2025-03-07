@@ -8,7 +8,7 @@ class ResourceSchemaLoader:
     pass
 
   def get_schema(self, name: str) -> dict[str, Any]:
-    schema_filename = f"google_ads/schemas/{name}.json"
+    schema_filename = os.path.join(os.path.dirname(__file__), "..", "schemas", f"{name}.json")
 
     if not os.path.exists(schema_filename):
       raise IOError(f"Cannot fine file {schema_filename}")
