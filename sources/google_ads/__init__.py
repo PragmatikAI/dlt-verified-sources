@@ -100,10 +100,12 @@ def google_ads(
 
 def stream_data(client: Resource, query: str, customer_id: str = dlt.secrets.value):
     ga_service = client.get_service("GoogleAdsService")
-    stream = ga_service.search_stream(customer_id=customer_id, query=query)
-    for batch in stream:
-        for row in batch.results:
-            yield to_dict(row)
+    customer_ids = customer_id.split(",")
+    for customer_id in customer_ids:
+        stream = ga_service.search_stream(customer_id=customer_id, query=query)
+        for batch in stream:
+            for row in batch.results:
+                yield to_dict(row)
 
 
 @dlt.resource(write_disposition="merge", primary_key=["campaign__id", "segments__date", "segments__ad_network_type"])
