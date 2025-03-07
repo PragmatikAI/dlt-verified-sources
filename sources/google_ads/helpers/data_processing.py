@@ -2,7 +2,7 @@ from typing import Any, Iterator
 from dlt.common.typing import TDataItem
 import proto
 import json
-
+from google.protobuf import json_format
 
 def to_dict(item: Any) -> Iterator[TDataItem]:
     """
@@ -10,11 +10,5 @@ def to_dict(item: Any) -> Iterator[TDataItem]:
     :param batch:
     :return:
     """
-    yield json.loads(
-        proto.Message.to_json(
-            item,
-            preserving_proto_field_name=True,
-            use_integers_for_enums=False,
-            including_default_value_fields=False,
-        )
-    )
+    json_str = json_format.MessageToJson(item._pb)
+    yield json.loads(json_str)

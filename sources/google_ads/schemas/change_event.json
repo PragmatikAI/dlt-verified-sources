@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "change_event.change_date_time": {
+      "description": "The date and time when the change occurred.",
+      "type": ["null", "string"]
+    },
+    "change_event.ad_group": {
+      "description": "The ad group that was changed.",
+      "type": ["null", "string"]
+    },
+    "change_event.asset": {
+      "description": "The asset that was changed.",
+      "type": ["null", "string"]
+    },
+    "change_event.campaign": {
+      "description": "The campaign that was changed.",
+      "type": ["null", "string"]
+    },
+    "change_event.change_resource_name": {
+      "description": "The resource name of the changed resource.",
+      "type": ["null", "string"]
+    },
+    "change_event.change_resource_type": {
+      "description": "The type of the changed resource.",
+      "type": ["null", "string"]
+    },
+    "change_event.changed_fields": {
+      "description": "The fields that were changed.",
+      "type": ["null", "string"]
+    },
+    "change_event.client_type": {
+      "description": "The type of the client that made the change.",
+      "type": ["null", "string"]
+    },
+    "change_event.feed": {
+      "description": "The feed that was changed.",
+      "type": ["null", "string"]
+    },
+    "change_event.feed_item": {
+      "description": "The feed item that was changed.",
+      "type": ["null", "string"]
+    },
+    "change_event.new_resource": {
+      "description": "The new resource that was created.",
+      "type": ["null", "string"]
+    },
+    "change_event.old_resource": {
+      "description": "The old resource that was deleted.",
+      "type": ["null", "string"]
+    },
+    "change_event.resource_change_operation": {
+      "description": "The operation that was performed on the resource.",
+      "type": ["null", "string"]
+    },
+    "change_event.resource_name": {
+      "description": "The resource name of the changed resource.",
+      "type": ["null", "string"]
+    },
+    "change_event.user_email": {
+      "description": "The email of the user who made this change.",
+      "type": ["null", "string"]
+    }
+  }
+}
